@@ -69,7 +69,7 @@ void _help(int argc, char * argv[])
 //未知指令
 void _unknow(int argc, char * argb[])
 {
-    throw std::exception("【未知指令】");
+    throw std::exception("【未知指令】试试 -help ?");
 }
 /************************************************************************/
 /* 主代码                                                                */
@@ -84,7 +84,7 @@ int main(int argc, char * argv[])
     {
         if (argc < 2)
         {
-            throw std::exception("【请输入指令及相关参数】");
+            throw std::exception("【请输入指令及相关参数】试试 -help ?");
         }
         else if (strcmp(argv[1], "-c") == 0)
         {
