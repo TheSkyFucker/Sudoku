@@ -7,7 +7,7 @@ SudokuChecker::SudokuChecker()
 }
 
 
-bool SudokuChecker::Check() const throw(std::exception)
+void SudokuChecker::Check() const throw(std::exception)
 {
     //config
     std::set<std::string> table;
@@ -15,15 +15,15 @@ bool SudokuChecker::Check() const throw(std::exception)
     //check
     int row = 0;
     int col = 0;
-    char str[82];
-    str[81] = '\0';
+    std::string str;
+    str.resize(81);
     for (char ch = getchar(); ch != EOF; ch = getchar())
     {
         if (ch < '0' || ch > '9')
         {
             continue;
         }
-        str[row * 9 + col] = ch - '0';
+        str[row * 9 + col] = ch;
         if (++col == 9)
         {
             col = 0;
@@ -33,7 +33,7 @@ bool SudokuChecker::Check() const throw(std::exception)
         {
             if (table.find(str) != table.end())
             {
-                return false;
+                throw std::exception("【SudokuChecker::Check】被测试终盘文件 sudoku.txt 包含重复终盘");
             }
             else 
             {
@@ -47,7 +47,6 @@ bool SudokuChecker::Check() const throw(std::exception)
     {
         throw std::exception("【SudokuChecker::Check】被测试终盘文件 sudoku.txt 包含不完整的终盘");
     }
-    return true;
 }
 
 SudokuChecker::~SudokuChecker()
