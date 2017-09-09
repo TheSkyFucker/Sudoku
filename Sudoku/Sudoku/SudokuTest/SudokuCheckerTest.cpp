@@ -18,7 +18,8 @@ namespace SudokuTest
         {
             //config
             const char * testFile = "test.txt";
-            //test 1
+
+            //合法测试
             for (int count = 1; count <= 2; count++)
             {
                 Sudoku seed;
@@ -32,7 +33,7 @@ namespace SudokuTest
                 {
                     SudokuChecker checker;
                     freopen(testFile, "r", stdin);
-                    Assert::IsTrue(checker.Check());
+                    checker.Check();
                     fclose(stdin);
                 }
                 catch (const std::exception&)
@@ -40,7 +41,8 @@ namespace SudokuTest
                     Assert::IsTrue(false);
                 }
             }
-            //test 2
+
+            //不完整测试
             freopen(testFile, "w", stdout);
             putchar('2');
             fclose(stdout);
@@ -49,7 +51,7 @@ namespace SudokuTest
             {
                 SudokuChecker checker;
                 freopen(testFile, "r", stdin);
-                Assert::IsFalse(checker.Check());
+                checker.Check();
                 fclose(stdin);
             }
             catch (const std::exception&)
@@ -57,6 +59,30 @@ namespace SudokuTest
                 checkFlag = true;
             }
             Assert::IsTrue(checkFlag);
+
+            //重复测试
+            freopen(testFile, "w", stdout);
+            Sudoku seed;
+            SudokuGenerator gen;
+            gen.Search(seed);
+            for (int count = 1; count <= 2; count++)
+            {
+                gen.OutputSudoku(seed);
+            }
+            fclose(stdout);
+            bool result = true;
+            try
+            {
+                SudokuChecker checker;
+                freopen(testFile, "r", stdin);
+                checker.Check();
+                fclose(stdin);
+            }
+            catch (const std::exception&)
+            {
+                result = false;
+            }
+            Assert::IsFalse(result);
         }
 
 
