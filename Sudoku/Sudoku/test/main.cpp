@@ -32,7 +32,7 @@ int main(int argc, char * argv[])
             std::cout << "【开始校验参数】" << std::endl;
             std::cout << "【校验参数中】" << std::endl;
             ParamChecker checker;
-            checker.CheckeCommandC(argc, argv);
+            checker.CheckCommandC(argc, argv);
             std::cout << "【校验参数完毕】" << std::endl;
             
             //doCommand
@@ -40,6 +40,21 @@ int main(int argc, char * argv[])
             CommandWorker worker;
             worker.WorkCommandC(argc, argv);
             std::cout << "【生成完毕】" << std::endl;
+        }
+        else if (strcmp(argv[1], "-check") == 0)
+        {
+            //checkParam
+            std::cout << "【开始校验参数】" << std::endl;
+            std::cout << "【校验参数中】" << std::endl;
+            ParamChecker checker;
+            checker.CheckCommandCheck(argc, argv);
+            std::cout << "【校验参数完毕】" << std::endl;
+
+            //doCommand
+            std::cout << "【开始检验】" << std::endl;
+            CommandWorker worker;
+            worker.WorkCommandCheck(argc, argv);
+            std::cout << "【检验通过】" << std::endl;
         }
         else
         {

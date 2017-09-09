@@ -33,6 +33,11 @@ void CommandWorker::WorkCommandC(int argc, char * argv[]) const throw(std::excep
     std::cout << "    【测试是否重复？】程序提供了重复性校验指令 -check，更多信息请执行： -check" << std::endl;
 }
 
+void CommandWorker::WorkCommandCheck(int argc, char * argv[]) const throw()
+{
+    
+}
+
 CommandWorker::~CommandWorker()
 {
 }
