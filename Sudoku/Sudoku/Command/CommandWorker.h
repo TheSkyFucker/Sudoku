@@ -38,7 +38,7 @@ public:
     // Qualifier: const throw()
     // Function: 执行 -c 指令
     //************************************
-    void WorkCommandC(int argc, char * argv[]) const throw();
+    void WorkCommandC(int argc, char * argv[]) const throw(std::exception);
 
 
     //************************************
@@ -49,8 +49,22 @@ public:
     // Qualifier: const throw()
     // Parameter: int argc
     // Parameter: char * argv[]
+    // Function: 执行<-check>指令
     //************************************
     void WorkCommandCheck(int argc, char * argv[]) const throw();
+
+
+    //************************************
+    // Method:    WorkCommandHelp
+    // FullName:  CommandWorker::WorkCommandHelp
+    // Access:    public 
+    // Returns:   void
+    // Qualifier: const throw()
+    // Parameter: int argc
+    // Parameter: char * argv[]
+    // Function: 执行<-help>指令
+    //************************************
+    void WorkCommandHelp(int argc, char * argv[]) const throw();
 
 
     ~CommandWorker();
