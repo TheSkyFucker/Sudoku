@@ -19,7 +19,7 @@ bool ParamChecker::IsDigit(std::string str) const throw()
     return true;
 }
 
-void ParamChecker::CheckeCommandC(int argc, char * argv[]) throw(std::exception)
+void ParamChecker::CheckCommandC(int argc, char * argv[]) throw(std::exception)
 {
     //config
     const std::string command = "-c";
@@ -44,6 +44,22 @@ void ParamChecker::CheckeCommandC(int argc, char * argv[]) throw(std::exception)
     if (strlen(argv[2]) > 7 || atoi(argv[2]) > 1000000)
     {
         throw std::exception("生成数量不能超过1000, 000");
+    }
+}
+
+void ParamChecker::CheckCommandCheck(int argc, char * argv[]) throw(std::exception)
+{
+    //config
+    const std::string command = "-check";
+
+    //check
+    if (argc < 2 || strcmp(argv[1], command.c_str()))
+    {
+        throw std::exception("指令与调用的参数函数不符");
+    }
+    if (argc != 2)
+    {
+        throw std::exception("请勿输入多余参数");
     }
 }
 

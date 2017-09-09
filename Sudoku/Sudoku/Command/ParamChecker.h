@@ -48,7 +48,20 @@ public:
     // Parameter: char * argv
     // Function: 校验指令 -c 的参数
     //************************************
-    void CheckeCommandC(int argc, char * argv[]) throw(std::exception);
+    void CheckCommandC(int argc, char * argv[]) throw(std::exception);
+
+
+    //************************************
+    // Method:    CheckCommandCheck
+    // FullName:  ParamChecker::CheckCommandCheck
+    // Access:    public 
+    // Returns:   void
+    // Qualifier: throw(std::exception)
+    // Parameter: int argc
+    // Parameter: char * argv[]
+    // Funciton: 校验指令 -check 的参数
+    //************************************
+    void CheckCommandCheck(int argc, char * argv[]) throw(std::exception);
 
 
     ~ParamChecker();

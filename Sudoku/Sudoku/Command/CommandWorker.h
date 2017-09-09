@@ -41,6 +41,18 @@ public:
     void WorkCommandC(int argc, char * argv[]) const throw();
 
 
+    //************************************
+    // Method:    WorkCommandCheck
+    // FullName:  CommandWorker::WorkCommandCheck
+    // Access:    public 
+    // Returns:   void
+    // Qualifier: const throw()
+    // Parameter: int argc
+    // Parameter: char * argv[]
+    //************************************
+    void WorkCommandCheck(int argc, char * argv[]) const throw();
+
+
     ~CommandWorker();
 };
 
