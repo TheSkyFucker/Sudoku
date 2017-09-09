@@ -7,12 +7,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sudoku", "Sudoku\Sudoku.vcx
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SudokuTest", "SudokuTest\SudokuTest.vcxproj", "{E6A0F0DC-A14B-4E94-A70B-58D57E0E09CC}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test", "test\test.vcxproj", "{78B0B49C-0AE0-4674-AE94-B21A16D5EA49}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Main", "test\test.vcxproj", "{78B0B49C-0AE0-4674-AE94-B21A16D5EA49}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Command", "Command\Command.vcxproj", "{5FC565E2-05B2-4D20-9302-671BE006BDB6}"
 EndProject
 Global
-	GlobalSection(Performance) = preSolution
-		HasPerformanceSessions = true
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
 		Debug|x86 = Debug|x86
@@ -44,11 +43,22 @@ Global
 		{78B0B49C-0AE0-4674-AE94-B21A16D5EA49}.Release|x64.Build.0 = Release|x64
 		{78B0B49C-0AE0-4674-AE94-B21A16D5EA49}.Release|x86.ActiveCfg = Release|Win32
 		{78B0B49C-0AE0-4674-AE94-B21A16D5EA49}.Release|x86.Build.0 = Release|Win32
+		{5FC565E2-05B2-4D20-9302-671BE006BDB6}.Debug|x64.ActiveCfg = Debug|x64
+		{5FC565E2-05B2-4D20-9302-671BE006BDB6}.Debug|x64.Build.0 = Debug|x64
+		{5FC565E2-05B2-4D20-9302-671BE006BDB6}.Debug|x86.ActiveCfg = Debug|Win32
+		{5FC565E2-05B2-4D20-9302-671BE006BDB6}.Debug|x86.Build.0 = Debug|Win32
+		{5FC565E2-05B2-4D20-9302-671BE006BDB6}.Release|x64.ActiveCfg = Release|x64
+		{5FC565E2-05B2-4D20-9302-671BE006BDB6}.Release|x64.Build.0 = Release|x64
+		{5FC565E2-05B2-4D20-9302-671BE006BDB6}.Release|x86.ActiveCfg = Release|Win32
+		{5FC565E2-05B2-4D20-9302-671BE006BDB6}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D8337C13-7CA8-4E4B-A8D5-221605F01B11}
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
 	EndGlobalSection
 EndGlobal

@@ -7,67 +7,38 @@
 #include "../Sudoku/Sudoku.h"
 #include "../Sudoku/SudokuGenerator.h"
 #include "../Sudoku//SudokuChecker.h"
-using namespace std;
 
-#include<time.h>  
 
-int main()
+
+/************************************************************************/
+/* 主代码                                                                */
+/* 职能：分析指令, 调用相关校验函数                                          */      
+/************************************************************************/
+int main(int argc, char * argv[])
 {
-    //config
-    clock_t startTime = clock();
-    freopen("sudoku.txt", "w", stdout);
-    SudokuGenerator gen;
-    Sudoku seed;
-    const int table[] = { 7, 4, 1, 2 ,5, 8, 3, 6, 9 };
-    for (int row = 0; row < 9; row++)
-    {
-        for (int col = 0; col < 9; col++)
-        {
-            int digit = (table[row] + col - 1) % 9 + 1;
-            seed.SetMatrix(row, col, digit);
-        }
-    }
    
     try
     {
-        gen.FastGenerate(seed, 1000000);
-
+            if (argc < 2)
+            {
+                throw std::exception("【请输入指令及相关参数】");
+            }
+            if (strcmp(argv[1], "-c") == 0)
+            {
+                std::cout << "【开始生成】" << std::endl;
+                std::cout << "【生成完毕】" << std::endl;
+            }
+            else
+            {
+                throw std::exception("【未知指令】");
+            }
     }
     catch (const std::exception& e)
     {
         puts(e.what());
-        return 0;
     }
     
-    fclose(stdout);
-    freopen("CON", "w", stdout);
-    freopen("sudoku.txt", "r", stdin);
-    clock_t middleTime = clock();
-    cout << "middle Time : " << (double)(middleTime - startTime) / CLOCKS_PER_SEC << "s" << endl;
-
-    SudokuChecker checker;
-    try
-    {
-        if (checker.Check())
-        {
-            cout << "测试通过" << std::endl;
-        }
-        else
-        {
-            cout << "测试未通过" << std::endl;
-        }
-    }
-    catch (const std::exception&e)
-    {
-        puts(e.what());
-        return 0;
-    }
-
-    fclose(stdin);
-    clock_t endTime = clock();
-
-    cout << "Totle Time : " << (double)(endTime - startTime) / CLOCKS_PER_SEC << "s" << endl;
-    
+    system("pause");
     return 0;
 }
 
