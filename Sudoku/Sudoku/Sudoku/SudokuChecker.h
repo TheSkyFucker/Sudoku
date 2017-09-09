@@ -36,7 +36,7 @@ public:
     // Qualifier: const throw(std::exception)
     // Function: 从当前输入流检测读到的终盘是否合法，直至EOF
     //************************************
-    bool Check() const throw(std::exception);
+    void Check() const throw(std::exception);
     
     ~SudokuChecker();
 };
