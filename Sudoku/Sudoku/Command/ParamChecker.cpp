@@ -21,9 +21,21 @@ bool ParamChecker::IsDigit(std::string str) const throw()
 
 void ParamChecker::CheckeCommandC(int argc, char * argv[]) throw(std::exception)
 {
+    //config
+    const std::string command = "-c";
+
+    //check
+    if (argc < 2 || strcmp(argv[1], command.c_str()))
+    {
+        throw std::exception("指令与调用的参数检验函数不符");
+    }
     if (argc < 3)
     {
         throw std::exception("请输入生成数量");
+    }
+    if (argc > 3)
+    {
+        throw std::exception("请勿输入多余参数");
     }
     if (IsDigit(argv[2]) == false)
     {

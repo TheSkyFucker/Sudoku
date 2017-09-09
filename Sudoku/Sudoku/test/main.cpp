@@ -7,7 +7,8 @@
 #include "../Sudoku/Sudoku.h"
 #include "../Sudoku/SudokuGenerator.h"
 #include "../Sudoku//SudokuChecker.h"
-
+#include "../Command/ParamChecker.h"
+#include "../Command/CommandWorker.h"
 
 
 /************************************************************************/
@@ -16,22 +17,34 @@
 /************************************************************************/
 int main(int argc, char * argv[])
 {
-   
+   //config
+
+    //work
     try
     {
-            if (argc < 2)
-            {
-                throw std::exception("【请输入指令及相关参数】");
-            }
-            if (strcmp(argv[1], "-c") == 0)
-            {
-                std::cout << "【开始生成】" << std::endl;
-                std::cout << "【生成完毕】" << std::endl;
-            }
-            else
-            {
-                throw std::exception("【未知指令】");
-            }
+        if (argc < 2)
+        {
+            throw std::exception("【请输入指令及相关参数】");
+        }
+        if (strcmp(argv[1], "-c") == 0)
+        {
+            //checkParam
+            std::cout << "【开始校验参数】" << std::endl;
+            std::cout << "【校验参数中】" << std::endl;
+            ParamChecker checker;
+            checker.CheckeCommandC(argc, argv);
+            std::cout << "【校验参数完毕】" << std::endl;
+            
+            //doCommand
+            std::cout << "【开始生成】" << std::endl;
+            CommandWorker worker;
+            worker.WorkCommandC(argc, argv);
+            std::cout << "【生成完毕】" << std::endl;
+        }
+        else
+        {
+            throw std::exception("【未知指令】");
+        }
     }
     catch (const std::exception& e)
     {
