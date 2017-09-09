@@ -105,7 +105,45 @@ namespace CommandTest
         delCharArr2(argv, argc);
     }
 
-	TEST_CLASS(ParamCheckerTest)
+    //************************************
+    // Method:    _CheckCommandHelp
+    // FullName:  CommandTest::_CheckCommandHelp
+    // Access:    public 
+    // Returns:   void
+    // Qualifier:
+    // Parameter: std::vector<std::string> str
+    // Parameter: bool expectedResult
+    // Function: 封装对指令 <-help> 的校验模板
+    //************************************
+    void _CheckCommandHelp(std::vector<std::string> str, bool expectedResult)
+    {
+        //config
+        int argc = (int)str.size();
+        char * * argv = newCharArr2(argc, 100);
+        for (int _argc = 0; _argc < argc; _argc++)
+        {
+            strcpy_s(argv[_argc], str[_argc].size() + 1, str[_argc].c_str());
+        }
+        ParamChecker checker;
+
+        //test
+        bool result = true;
+        try
+        {
+            checker.CheckCommandHelp(argc, argv);
+        }
+        catch (const std::exception&e)
+        {
+            e;
+            result = false;
+        }
+        Assert::AreEqual(expectedResult, result);
+
+        //delete
+        delCharArr2(argv, argc);
+    }
+    
+    TEST_CLASS(ParamCheckerTest)
 	{
 	public:
 		
@@ -151,6 +189,15 @@ namespace CommandTest
             _CheckCommandCheck({ "d:\\", "-check", "1" }, false);
             //legal
             _CheckCommandCheck({ "d:\\", "-check" }, true);
+        }
+
+        TEST_METHOD(CheckCommandHelp)
+        {
+            //test 1
+            _CheckCommandHelp({ "d:\\", "-helpafadfad" }, false);
+            _CheckCommandHelp({ "d:\\", "-help", "1" }, false);
+            //legal
+            _CheckCommandHelp({ "d:\\", "-help" }, true);
         }
 
 	};

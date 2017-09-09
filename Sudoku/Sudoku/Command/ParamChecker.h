@@ -64,6 +64,18 @@ public:
     void CheckCommandCheck(int argc, char * argv[]) throw(std::exception);
 
 
+    //************************************
+    // Method:    CheckCommandHelp
+    // FullName:  ParamChecker::CheckCommandHelp
+    // Access:    public 
+    // Returns:   void
+    // Qualifier: throw(std::exception)
+    // Parameter: int argc
+    // Parameter: char * argv[]
+    // Funciton: 校验指令 -help 的参数
+    //************************************
+    void CheckCommandHelp(int argc, char * argv[]) throw(std::exception);
+
     ~ParamChecker();
 };
 

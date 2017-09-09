@@ -63,6 +63,23 @@ void ParamChecker::CheckCommandCheck(int argc, char * argv[]) throw(std::excepti
     }
 }
 
+void ParamChecker::CheckCommandHelp(int argc, char * argv[]) throw(std::exception)
+{
+    //config
+    const std::string command = "-help";
+
+    //check
+    if (argc < 2 || strcmp(argv[1], command.c_str()))
+    {
+        throw std::exception("指令与调用的参数函数不符");
+    }
+    if (argc != 2)
+    {
+        throw std::exception("请勿输入多余参数");
+    }
+
+}
+
 ParamChecker::~ParamChecker()
 {
 }
