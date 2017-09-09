@@ -47,6 +47,7 @@ namespace CommandTest
         }
         catch (const std::exception&e)
         {
+            e;
             result = false;
         }
         Assert::AreEqual(expectedResult, result);
@@ -56,7 +57,7 @@ namespace CommandTest
     }
 
 
-	TEST_CLASS(UnitTest1)
+	TEST_CLASS(ParamCheckerTest)
 	{
 	public:
 		
@@ -79,7 +80,10 @@ namespace CommandTest
 
         TEST_METHOD(CheckeCommandC)
         {
-            //test
+            //test 1
+            _CheckeCommandC({ "d:\\", "-cc", "123" }, false);
+            _CheckeCommandC({ "d:\\", "-cc", "123", "adfad" }, false);
+            //test 2
             _CheckeCommandC({ "d:\\", "-c", "afadfda" }, false);
             _CheckeCommandC({ "d:\\", "-c", "41341341341313413" }, false);
             _CheckeCommandC({ "d:\\", "-c", "f4134adf" }, false);
@@ -88,6 +92,7 @@ namespace CommandTest
             _CheckeCommandC({ "d:\\", "-c", "1" }, true);
             _CheckeCommandC({ "d:\\", "-c", "123" }, true);
             _CheckeCommandC({ "d:\\", "-c", "1000000" }, true);
+            _CheckeCommandC({ "d:\\", "-c", "1000000", "233"}, false);
         }
 
 	};
