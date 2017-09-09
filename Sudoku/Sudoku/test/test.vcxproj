@@ -166,6 +166,9 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Command\Command.vcxproj">
+      <Project>{5fc565e2-05b2-4d20-9302-671be006bdb6}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\Sudoku\Sudoku.vcxproj">
       <Project>{9fcbf7a6-3f62-49dd-974d-42be4aea36dc}</Project>
     </ProjectReference>
