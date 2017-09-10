@@ -77,7 +77,6 @@ void _unknow(int argc, char * argb[])
 /************************************************************************/
 int main(int argc, char * argv[])
 {
-    //config
 
     //work
     try
