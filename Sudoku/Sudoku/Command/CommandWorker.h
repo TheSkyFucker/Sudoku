@@ -31,6 +31,17 @@ public:
 
 
     //************************************
+    // Method:    getExePath
+    // FullName:  CommandWorker::getExePath
+    // Access:    public 
+    // Returns:   std::string
+    // Qualifier: const throw()
+    // Function: 获取当前exe文件目录
+    //************************************
+    std::string getExePath() const throw();
+
+
+    //************************************
     // Method:    WorkCommandC
     // FullName:  CommandWorker::WorkCommandC
     // Access:    public 
