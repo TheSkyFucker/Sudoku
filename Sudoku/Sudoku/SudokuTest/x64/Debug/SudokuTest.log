@@ -1,0 +1,10 @@
+﻿  stdafx.cpp
+  SudokuTest.cpp
+  SudokuGeneratorTest.cpp
+  SudokuCheckerTest.cpp
+  正在生成代码...
+LINK : warning LNK4075: 忽略“/INCREMENTAL”(由于“/PROFILE”规范)
+stdafx.obj : warning LNK4075: 忽略“/EDITANDCONTINUE”(由于“/OPT:REF”规范)
+    正在创建库 D:\Github\Sudoku\Sudoku\Sudoku\x64\Debug\SudokuTest.lib 和对象 D:\Github\Sudoku\Sudoku\Sudoku\x64\Debug\SudokuTest.exp
+  SudokuTest.vcxproj -> D:\Github\Sudoku\Sudoku\Sudoku\x64\Debug\SudokuTest.dll
+  SudokuTest.vcxproj -> D:\Github\Sudoku\Sudoku\Sudoku\x64\Debug\SudokuTest.pdb (Partial PDB)

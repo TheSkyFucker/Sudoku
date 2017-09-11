@@ -1,0 +1,4 @@
+﻿  stdafx.cpp
+  CommandWorker.cpp
+  ParamChecker.cpp
+  Command.vcxproj -> D:\Github\Sudoku\Sudoku\Sudoku\x64\Release\Command.lib

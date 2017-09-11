@@ -1,0 +1,6 @@
+﻿  stdafx.cpp
+  main.cpp
+LINK : warning LNK4075: 忽略“/INCREMENTAL”(由于“/PROFILE”规范)
+stdafx.obj : warning LNK4075: 忽略“/EDITANDCONTINUE”(由于“/OPT:REF”规范)
+  test.vcxproj -> D:\Github\Sudoku\Sudoku\Sudoku\x64\Debug\Main.exe
+  test.vcxproj -> D:\Github\Sudoku\Sudoku\Sudoku\x64\Debug\Main.pdb (Partial PDB)
