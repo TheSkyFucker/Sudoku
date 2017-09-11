@@ -1,0 +1,10 @@
+﻿  stdafx.cpp
+  SudokuCheckerTest.cpp
+  SudokuGeneratorTest.cpp
+  SudokuTest.cpp
+LINK : warning LNK4075: 忽略“/INCREMENTAL”(由于“/LTCG”规范)
+    正在创建库 D:\Github\Sudoku\Sudoku\Sudoku\x64\Release\SudokuTest.lib 和对象 D:\Github\Sudoku\Sudoku\Sudoku\x64\Release\SudokuTest.exp
+  正在生成代码
+  All 454 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  已完成代码的生成
+  SudokuTest.vcxproj -> D:\Github\Sudoku\Sudoku\Sudoku\x64\Release\SudokuTest.dll

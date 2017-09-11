@@ -1,0 +1,5 @@
+﻿  stdafx.cpp
+  Sudoku.cpp
+  SudokuChecker.cpp
+  SudokuGenerator.cpp
+  Sudoku.vcxproj -> D:\Github\Sudoku\Sudoku\Sudoku\x64\Release\Sudoku.lib
