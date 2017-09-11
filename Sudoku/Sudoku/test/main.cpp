@@ -107,7 +107,7 @@ int main(int argc, char * argv[])
         puts(e.what());
     }
     
-    system("pause");
+    //system("pause");
     return 0;
 }
 
